@@ -1,4 +1,4 @@
-const API_BASE_URL = 'https://acervomestrebackend.onrender.com';
+export const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://acervomestrebackend.onrender.com';
 
 const getAuthToken = (): string | null => {
   return localStorage.getItem('accessToken');
