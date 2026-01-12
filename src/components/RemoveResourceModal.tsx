@@ -79,7 +79,7 @@ export function RemoveResourceModal({
           </div>
 
           <p className="text-sm text-gray-600">
-            Esta ação não excluirá o recurso permanentemente.
+            Esta ação excluirá o recurso permanentemente.
           </p>
         </div>
 
