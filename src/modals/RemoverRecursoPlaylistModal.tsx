@@ -34,7 +34,7 @@ const RemoverRecursoModal: React.FC<RemoverRecursoModalProps> = ({
       if (!recursoId) return;
       
       setLoadingGet(true);
-      const token = localStorage.getItem('token_acervo');
+      const token = localStorage.getItem('accessToken');
       try {
         const resRecurso = await fetch(`https://acervomestrebackend.onrender.com/recursos/get/${recursoId}`, {
           headers: { 'Authorization': `Bearer ${token}` }
@@ -67,7 +67,7 @@ const RemoverRecursoModal: React.FC<RemoverRecursoModalProps> = ({
   const handleRemover = async () => {
     if (!playlistId || !recursoId) return;
 
-    const token = localStorage.getItem('token_acervo');
+    const token = localStorage.getItem('accessToken');
     try {
       setLoading(true);
       const response = await fetch(`https://acervomestrebackend.onrender.com/playlists/delete_recurso/${playlistId}/${recursoId}`, {

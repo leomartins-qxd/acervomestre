@@ -25,7 +25,7 @@ const EditarPlaylistModal: React.FC<EditarPlaylistModalProps> = ({ isOpen, onClo
     if (isOpen && playlistId) {
       const carregarPlaylist = async () => {
         setLoadingGet(true);
-        const token = localStorage.getItem('token_acervo');
+        const token = localStorage.getItem('accessToken');
         try {
           const response = await fetch(`https://acervomestrebackend.onrender.com/playlists/get/${playlistId}`, {
             headers: { 'Authorization': `Bearer ${token}` }
@@ -61,7 +61,7 @@ const EditarPlaylistModal: React.FC<EditarPlaylistModalProps> = ({ isOpen, onClo
       return;
     }
 
-    const token = localStorage.getItem('token_acervo');
+    const token = localStorage.getItem('accessToken');
     const dadosParaAtualizar = {
       titulo: formData.titulo,
       descricao: formData.descricao 

@@ -27,7 +27,7 @@ const ExcluirPlaylistModal: React.FC<ExcluirPlaylistModalProps> = ({ isOpen, onC
     if (isOpen && playlistId) {
       const carregarPlaylist = async () => {
         setLoadingGet(true);
-        const token = localStorage.getItem('token_acervo');
+        const token = localStorage.getItem('accessToken');
         try {
           const response = await fetch(`https://acervomestrebackend.onrender.com/playlists/get/${playlistId}`, {
             headers: { 'Authorization': `Bearer ${token}` }
@@ -50,7 +50,7 @@ const ExcluirPlaylistModal: React.FC<ExcluirPlaylistModalProps> = ({ isOpen, onC
   }, [isOpen, playlistId]);
 
   const handleExcluir = async () => {
-    const token = localStorage.getItem('token_acervo');
+    const token = localStorage.getItem('accessToken');
     try {
       setLoading(true);
       const response = await fetch(`https://acervomestrebackend.onrender.com/playlists/delete/${playlistId}`, {
