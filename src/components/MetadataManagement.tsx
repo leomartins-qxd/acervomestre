@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Plus, X } from 'lucide-react';
 
-const API_URL = '/api';
+import { API_BASE_URL as API_URL } from '../services/api';
 
 interface Tag {
   id: number;

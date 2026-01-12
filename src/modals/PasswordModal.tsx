@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { X, ArrowLeft } from 'lucide-react';
 import logo from '../assets/logo.png';
 
-const API_URL = '/api';
+import { API_BASE_URL as API_URL } from '../services/api';
 
 interface PasswordModalProps {
   isOpen: boolean;
